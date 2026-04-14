@@ -91,7 +91,7 @@ export function ProcessingOverlay() {
               />
 
               <div className="relative z-10 flex h-22 w-22 items-center justify-center rounded-[26px] border border-white/80 bg-white/95 p-3 shadow-soft">
-                <Image src="/logo.jpeg" alt="ELANTRAA logo" width={72} height={72} className="h-14 w-14 object-contain" />
+                <Image src="/logo.png" alt="ELANTRAA logo" width={72} height={72} className="h-14 w-14 object-contain" />
               </div>
             </div>
 

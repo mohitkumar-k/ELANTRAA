@@ -14,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
   const discounted = calculateDiscountedPrice(product.mrp, product.discount);
 
   return (
-    <article className="group overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-luxe">
+    <article className="group overflow-hidden rounded-[22px] border border-stone-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-luxe">
       <div className="relative aspect-[4/5] overflow-hidden bg-brand-cream">
         <Image
           src={primaryImage.url}
@@ -25,48 +25,48 @@ export function ProductCard({ product }: { product: Product }) {
         />
         <button
           onClick={() => toggleWishlist(product)}
-          className="absolute right-4 top-4 rounded-full bg-white/90 p-2.5 text-brand-maroon shadow-soft backdrop-blur transition hover:bg-white"
+          className="absolute left-3 top-3 rounded-full bg-white/90 p-2.5 text-brand-maroon shadow-soft backdrop-blur transition hover:bg-white"
           aria-label="Toggle wishlist"
         >
           <Heart className={isWishlisted(product.slug) ? 'fill-brand-gold text-brand-gold' : ''} size={18} />
         </button>
 
-        <div className="absolute left-4 top-4 rounded-full bg-brand-maroon px-3 py-1 text-xs font-semibold text-white">
+        <button
+          type="button"
+          className="absolute left-3 top-16 rounded-full bg-white/90 p-2.5 text-brand-maroon shadow-soft backdrop-blur transition hover:bg-white"
+          aria-label="Quick look"
+        >
+          <Eye size={18} />
+        </button>
+
+        <div className="absolute right-3 top-3 rounded-full bg-[#ff6a00] px-3 py-1 text-xs font-semibold text-white shadow-sm">
           -{product.discount}%
         </div>
 
-        <div className="absolute inset-x-4 bottom-4 flex translate-y-4 gap-2 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <Link href={`/product/${product.slug}`} className="flex-1 rounded-full bg-white/95 px-4 py-3 text-center text-xs font-semibold text-brand-maroon shadow-soft">
-            <span className="inline-flex items-center justify-center gap-2">
-              <Eye size={14} />
-              Quick View
-            </span>
+        <div className="absolute bottom-3 right-3 flex w-12 flex-col items-center gap-2 rounded-[20px] bg-white/95 py-3 text-brand-maroon shadow-soft backdrop-blur sm:w-14">
+          <Link href={`/product/${product.slug}`} className="flex items-center justify-center" aria-label="Quick view">
+            <Eye size={18} />
           </Link>
           <button
             onClick={() => addItem(product, product.sizes[0] ?? 'Free Size')}
-            className="flex-1 rounded-full bg-brand-maroon px-4 py-3 text-xs font-semibold text-white shadow-soft"
+            className="flex items-center justify-center"
+            aria-label="Add to cart"
           >
-            <span className="inline-flex items-center justify-center gap-2">
-              <ShoppingBag size={14} />
-              Add
-            </span>
+            <ShoppingBag size={18} />
           </button>
         </div>
       </div>
 
-      <div className="space-y-3 p-5">
+      <div className="space-y-2 px-1 py-4 sm:px-0">
+        <p className="text-sm text-stone-500">ELANTRAA</p>
         <Link href={`/product/${product.slug}`} className="block">
-          <h3 className="line-clamp-2 text-base font-semibold text-brand-maroonDeep transition group-hover:text-brand-maroon">
+          <h3 className="line-clamp-2 text-[15px] font-semibold leading-6 text-stone-900 transition group-hover:text-brand-maroonDeep">
             {product.title}
           </h3>
         </Link>
-        <div className="flex items-center gap-3">
-          <span className="text-lg font-semibold text-brand-maroon">{formatCurrency(discounted)}</span>
-          <span className="text-sm text-stone-400 line-through">{formatCurrency(product.mrp)}</span>
-        </div>
-        <div className="flex items-center justify-between text-xs text-stone-500">
-          <span>{product.rating.toFixed(1)} rating</span>
-          <span>{product.reviewsCount} reviews</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[13px] text-stone-500 line-through">{formatCurrency(product.mrp)}</span>
+          <span className="text-[16px] font-semibold text-red-600">{formatCurrency(discounted)}</span>
         </div>
       </div>
     </article>

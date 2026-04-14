@@ -25,16 +25,16 @@ export const metadata: Metadata = {
   description: 'Luxury lehenga choli, sarees, and designer ethnic wear from ELANTRAA.',
   metadataBase: new URL('https://elantraa.com'),
   icons: {
-    icon: '/logo.jpeg',
-    shortcut: '/logo.jpeg',
-    apple: '/logo.jpeg'
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png'
   }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${sans.variable} font-sans`}>
+      <body className={`${serif.variable} ${sans.variable} font-sans overflow-x-hidden`}>
         <AppProviders>
           <Header />
           <main>{children}</main>
