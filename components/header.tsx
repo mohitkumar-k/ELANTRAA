@@ -41,14 +41,14 @@ export function Header() {
       </div>
 
       <div className="luxe-container flex items-center gap-5 py-4">
-        <Link href="/" className="flex flex-none items-center justify-center rounded-2xl px-1 py-0.5">
+        <Link href="/" className="flex flex-none items-center justify-center rounded-2xl">
           <Image
             src="/logo.jpeg"
             alt="ELANTRAA logo"
             width={200}
             height={68}
             priority
-            className="block h-16 w-auto max-w-none object-contain sm:h-[4.5rem]"
+            className="block h-12 w-auto max-w-none object-contain sm:h-14"
           />
         </Link>
 
