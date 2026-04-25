@@ -50,11 +50,11 @@ function ProductPage() {
           <ImageGallery images={product.images} />
           <div className="glass-card p-6 sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand">{product.category}</p>
-            <h1 className="heading-display text-4xl text-[#24151d] sm:text-5xl">{product.name}</h1>
+            <h1 className="heading-display text-4xl text-[#A8841F] sm:text-5xl">{product.name}</h1>
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="text-2xl font-semibold text-brand">{formatPrice(product.salePrice)}</span>
-              <span className="text-base text-[#8f7783] line-through">{formatPrice(product.mrp)}</span>
-              <span className="rounded-full bg-[#24151d] px-4 py-2 text-xs font-semibold tracking-[0.15em] text-white">
+              <span className="text-base text-[#C9A227] line-through">{formatPrice(product.mrp)}</span>
+              <span className="rounded-full bg-[#A8841F] px-4 py-2 text-xs font-semibold tracking-[0.15em] text-white">
                 SAVE {formatPrice(savings)}
               </span>
             </div>
@@ -67,7 +67,7 @@ function ProductPage() {
                     key={item}
                     type="button"
                     className={`rounded-full border px-4 py-2 text-sm ${
-                      size === item ? 'border-brand bg-brand text-white' : 'border-[#f0dde5] bg-white'
+                      size === item ? 'border-brand bg-brand text-white' : 'border-[#E0B84A] bg-white text-[#A8841F]'
                     }`}
                     onClick={() => setSize(item)}
                   >
@@ -79,7 +79,7 @@ function ProductPage() {
 
             <div className="mt-8">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em]">Quantity</p>
-              <div className="inline-flex items-center rounded-full border border-[#f0dde5] bg-white">
+              <div className="inline-flex items-center rounded-full border border-[#E0B84A] bg-white text-[#A8841F]">
                 <button type="button" className="px-4 py-2" onClick={() => setQuantity((value) => Math.max(1, value - 1))}>
                   -
                 </button>
@@ -97,7 +97,7 @@ function ProductPage() {
               <RazorpayButton
                 amount={product.salePrice * quantity}
                 customer={{}}
-                className="inline-flex w-full items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold tracking-[0.18em] text-white"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#A8841F] px-6 py-3 text-sm font-semibold tracking-[0.18em] text-white"
                 onSuccess={() => toast.success('Payment completed. Continue through checkout for saved order flow.')}
               >
                 BUY NOW
@@ -107,7 +107,7 @@ function ProductPage() {
             <div className="mt-4 flex flex-wrap gap-3">
               <button
                 type="button"
-                className={`rounded-full border px-4 py-2 text-sm ${hasInWishlist(product.id) ? 'border-brand text-brand' : 'border-[#f0dde5]'}`}
+                className={`rounded-full border px-4 py-2 text-sm ${hasInWishlist(product.id) ? 'border-brand text-brand' : 'border-[#E0B84A] text-[#A8841F]'}`}
                 onClick={() => toggleWishlist(product)}
               >
                 <span className="inline-flex items-center gap-2">
@@ -116,7 +116,7 @@ function ProductPage() {
               </button>
               <button
                 type="button"
-                className="rounded-full border border-[#f0dde5] px-4 py-2 text-sm"
+                className="rounded-full border border-[#E0B84A] px-4 py-2 text-sm text-[#A8841F]"
                 onClick={() => {
                   navigator.clipboard.writeText(window.location.href)
                   toast.success('Product link copied')
@@ -130,32 +130,32 @@ function ProductPage() {
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {trustBadges.map((badge) => (
-                <div key={badge} className="rounded-[20px] border border-[#f0dde5] bg-white px-4 py-3 text-sm text-[#6f5160]">
+                <div key={badge} className="rounded-[20px] border border-[#E0B84A] bg-white px-4 py-3 text-sm text-[#C9A227]">
                   {badge}
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 rounded-[24px] bg-[#fff5f8] p-4 text-sm text-[#6f5160]">
-              <p className="flex items-center gap-2 font-medium text-[#24151d]">
+            <div className="mt-6 rounded-[24px] bg-white p-4 text-sm text-[#C9A227]">
+              <p className="flex items-center gap-2 font-medium text-[#A8841F]">
                 <FiTruck /> Delivery by {getDeliveryEstimate(7)}
               </p>
             </div>
 
             <div className="mt-8">
-              <div className="flex flex-wrap gap-3 border-b border-[#f0dde5] pb-4">
+              <div className="flex flex-wrap gap-3 border-b border-[#E0B84A] pb-4">
                 {['description', 'size guide', 'return policy'].map((item) => (
                   <button
                     key={item}
                     type="button"
-                    className={`rounded-full px-4 py-2 text-sm ${tab === item ? 'bg-brand text-white' : 'bg-[#fff5f8] text-[#6f5160]'}`}
+                    className={`rounded-full px-4 py-2 text-sm ${tab === item ? 'bg-brand text-white' : 'bg-white text-[#C9A227] border border-[#E0B84A]'}`}
                     onClick={() => setTab(item)}
                   >
                     {item}
                   </button>
                 ))}
               </div>
-              <div className="pt-5 text-sm leading-7 text-[#6f5160]">
+              <div className="pt-5 text-sm leading-7 text-[#C9A227]">
                 {tab === 'description' && <p>{product.description}</p>}
                 {tab === 'size guide' && (
                   <p>True-to-size fit. If you prefer more ease in festive styles, choose one size up.</p>
@@ -170,7 +170,7 @@ function ProductPage() {
       </section>
 
       <section className="container-shell page-section">
-        <h2 className="heading-display mb-8 text-4xl text-[#24151d]">Related Products</h2>
+        <h2 className="heading-display mb-8 text-4xl text-[#A8841F]">Related Products</h2>
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {related.map((item) => (
             <ProductCard key={item.id} product={item} />

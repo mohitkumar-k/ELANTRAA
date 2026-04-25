@@ -248,7 +248,7 @@ function AdminPage() {
               key={item}
               type="button"
               className={`rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em] ${
-                tab === item ? 'bg-brand text-white' : 'bg-white text-[#6f5160]'
+                tab === item ? 'bg-brand text-white' : 'bg-white text-[#C9A227]'
               }`}
               onClick={() => setTab(item)}
             >
@@ -260,16 +260,16 @@ function AdminPage() {
         {tab === 'dashboard' && (
           <div className="grid gap-5 md:grid-cols-3">
             <div className="glass-card p-6">
-              <p className="text-sm text-[#6f5160]">Total Orders</p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#24151d]">{metrics.totalOrders}</h2>
+              <p className="text-sm text-[#C9A227]">Total Orders</p>
+              <h2 className="mt-3 text-3xl font-semibold text-[#A8841F]">{metrics.totalOrders}</h2>
             </div>
             <div className="glass-card p-6">
-              <p className="text-sm text-[#6f5160]">Revenue</p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#24151d]">{formatPrice(metrics.revenue)}</h2>
+              <p className="text-sm text-[#C9A227]">Revenue</p>
+              <h2 className="mt-3 text-3xl font-semibold text-[#A8841F]">{formatPrice(metrics.revenue)}</h2>
             </div>
             <div className="glass-card p-6">
-              <p className="text-sm text-[#6f5160]">Products</p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#24151d]">{metrics.totalProducts}</h2>
+              <p className="text-sm text-[#C9A227]">Products</p>
+              <h2 className="mt-3 text-3xl font-semibold text-[#A8841F]">{metrics.totalProducts}</h2>
             </div>
           </div>
         )}
@@ -277,18 +277,18 @@ function AdminPage() {
         {tab === 'products' && (
           <div className="grid gap-8 xl:grid-cols-[420px_1fr]">
             <form onSubmit={handleProductSubmit} className="glass-card space-y-4 p-6">
-              <h2 className="heading-display text-3xl text-[#24151d]">Product CRUD</h2>
+              <h2 className="heading-display text-3xl text-[#A8841F]">Product CRUD</h2>
               <input
                 type="text"
                 placeholder="Product name"
                 value={productForm.name}
                 onChange={(event) => setProductForm((current) => ({ ...current, name: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <select
                 value={productForm.category}
                 onChange={(event) => setProductForm((current) => ({ ...current, category: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               >
                 {categories.map((category) => (
                   <option key={category.slug} value={category.slug}>
@@ -302,14 +302,14 @@ function AdminPage() {
                   placeholder="MRP"
                   value={productForm.mrp}
                   onChange={(event) => setProductForm((current) => ({ ...current, mrp: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
                 <input
                   type="number"
                   placeholder="Sale price"
                   value={productForm.salePrice}
                   onChange={(event) => setProductForm((current) => ({ ...current, salePrice: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -318,38 +318,38 @@ function AdminPage() {
                   placeholder="Fabric"
                   value={productForm.fabric}
                   onChange={(event) => setProductForm((current) => ({ ...current, fabric: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
                 <input
                   type="text"
                   placeholder="Color"
                   value={productForm.color}
                   onChange={(event) => setProductForm((current) => ({ ...current, color: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
               </div>
               <textarea
                 placeholder="Description"
                 value={productForm.description}
                 onChange={(event) => setProductForm((current) => ({ ...current, description: event.target.value }))}
-                className="min-h-28 w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="min-h-28 w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="number"
                 placeholder="Stock"
                 value={productForm.stock}
                 onChange={(event) => setProductForm((current) => ({ ...current, stock: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="file"
                 multiple
                 accept="image/*"
                 onChange={handleFilesChange}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
-              <div className="rounded-[22px] border border-dashed border-[#e9c9d8] bg-[#fff8fb] p-4">
-                <div className="flex items-center gap-3 text-sm text-[#6f5160]">
+              <div className="rounded-[22px] border border-dashed border-[#E0B84A] bg-white p-4">
+                <div className="flex items-center gap-3 text-sm text-[#C9A227]">
                   <FiUploadCloud className="text-lg text-brand" />
                   <p>Upload product images. Selected files are compressed before Firebase upload.</p>
                 </div>
@@ -359,7 +359,7 @@ function AdminPage() {
                 {files.length > 0 && (
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {files.map((item) => (
-                      <div key={item.id} className="rounded-[18px] border border-[#f0dde5] bg-white p-3">
+                      <div key={item.id} className="rounded-[18px] border border-[#E0B84A] bg-white p-3">
                         <div className="relative overflow-hidden rounded-[14px]">
                           <img src={item.preview} alt={item.name} className="h-32 w-full object-cover" />
                           <button
@@ -372,8 +372,8 @@ function AdminPage() {
                           </button>
                         </div>
                         <div className="mt-3 text-sm">
-                          <p className="truncate font-medium text-[#24151d]">{item.originalName}</p>
-                          <p className="mt-1 text-[#6f5160]">
+                          <p className="truncate font-medium text-[#A8841F]">{item.originalName}</p>
+                          <p className="mt-1 text-[#C9A227]">
                             {formatFileSize(item.originalSize)} to {formatFileSize(item.compressedSize)}
                           </p>
                         </div>
@@ -382,7 +382,7 @@ function AdminPage() {
                   </div>
                 )}
               </div>
-              <label className="flex items-center gap-3 text-sm text-[#6f5160]">
+              <label className="flex items-center gap-3 text-sm text-[#C9A227]">
                 <input
                   type="checkbox"
                   checked={productForm.isFeatured}
@@ -401,8 +401,8 @@ function AdminPage() {
                 <div key={product.id} className="glass-card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
                   <img src={product.images?.[0]} alt={product.name} className="h-24 w-20 rounded-[18px] object-cover" />
                   <div className="flex-1">
-                    <p className="font-semibold text-[#24151d]">{product.name}</p>
-                    <p className="text-sm text-[#6f5160]">
+                    <p className="font-semibold text-[#A8841F]">{product.name}</p>
+                    <p className="text-sm text-[#C9A227]">
                       {product.category} - {formatPrice(product.salePrice)}
                     </p>
                   </div>
@@ -426,15 +426,15 @@ function AdminPage() {
               <div key={order.id} className="glass-card p-5">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="font-semibold text-[#24151d]">{order.id}</p>
-                    <p className="text-sm text-[#6f5160]">
+                    <p className="font-semibold text-[#A8841F]">{order.id}</p>
+                    <p className="text-sm text-[#C9A227]">
                       {formatPrice(order.total)} - {order.items?.length || 0} items
                     </p>
                   </div>
                   <select
                     value={order.status}
                     onChange={(event) => handleStatus(order.id, event.target.value)}
-                    className="rounded-full border border-[#f0dde5] px-5 py-3 text-sm"
+                    className="rounded-full border border-[#E0B84A] px-5 py-3 text-sm"
                   >
                     <option value="Pending">Pending</option>
                     <option value="Shipped">Shipped</option>
@@ -449,36 +449,36 @@ function AdminPage() {
         {tab === 'categories' && (
           <div className="grid gap-8 xl:grid-cols-[420px_1fr]">
             <form onSubmit={handleCategorySubmit} className="glass-card space-y-4 p-6">
-              <h2 className="heading-display text-3xl text-[#24151d]">Categories</h2>
+              <h2 className="heading-display text-3xl text-[#A8841F]">Categories</h2>
               <input
                 type="text"
                 placeholder="Category name"
                 value={categoryForm.name}
                 onChange={(event) => setCategoryForm((current) => ({ ...current, name: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="text"
                 placeholder="Slug"
                 value={categoryForm.slug}
                 onChange={(event) => setCategoryForm((current) => ({ ...current, slug: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="text"
                 placeholder="Image URL or upload below"
                 value={categoryForm.image}
                 onChange={(event) => setCategoryForm((current) => ({ ...current, image: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="file"
                 accept="image/*"
                 onChange={handleCategoryImageChange}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
-              <div className="rounded-[22px] border border-dashed border-[#e9c9d8] bg-[#fff8fb] p-4">
-                <div className="flex items-center gap-3 text-sm text-[#6f5160]">
+              <div className="rounded-[22px] border border-dashed border-[#E0B84A] bg-white p-4">
+                <div className="flex items-center gap-3 text-sm text-[#C9A227]">
                   <FiUploadCloud className="text-lg text-brand" />
                   <p>Upload a category image. Uploaded file will be used instead of the URL field.</p>
                 </div>
@@ -486,7 +486,7 @@ function AdminPage() {
                   <p className="mt-3 text-sm font-medium text-brand">Compressing category image...</p>
                 )}
                 {categoryImageFile && (
-                  <div className="mt-4 rounded-[18px] border border-[#f0dde5] bg-white p-3">
+                  <div className="mt-4 rounded-[18px] border border-[#E0B84A] bg-white p-3">
                     <div className="relative overflow-hidden rounded-[14px]">
                       <img src={categoryImageFile.preview} alt={categoryImageFile.name} className="h-40 w-full object-cover" />
                       <button
@@ -499,8 +499,8 @@ function AdminPage() {
                       </button>
                     </div>
                     <div className="mt-3 text-sm">
-                      <p className="truncate font-medium text-[#24151d]">{categoryImageFile.originalName}</p>
-                      <p className="mt-1 text-[#6f5160]">
+                      <p className="truncate font-medium text-[#A8841F]">{categoryImageFile.originalName}</p>
+                      <p className="mt-1 text-[#C9A227]">
                         {formatFileSize(categoryImageFile.originalSize)} to {formatFileSize(categoryImageFile.compressedSize)}
                       </p>
                     </div>
@@ -511,7 +511,7 @@ function AdminPage() {
                 placeholder="Description"
                 value={categoryForm.description}
                 onChange={(event) => setCategoryForm((current) => ({ ...current, description: event.target.value }))}
-                className="min-h-28 w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="min-h-28 w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <button type="submit" className="btn-primary w-full">
                 SAVE CATEGORY
@@ -523,8 +523,8 @@ function AdminPage() {
                 <div key={category.slug} className="glass-card overflow-hidden">
                   <img src={category.image} alt={category.name} className="h-44 w-full object-cover" />
                   <div className="p-5">
-                    <p className="heading-display text-3xl text-[#24151d]">{category.name}</p>
-                    <p className="mt-2 text-sm text-[#6f5160]">{category.description}</p>
+                    <p className="heading-display text-3xl text-[#A8841F]">{category.name}</p>
+                    <p className="mt-2 text-sm text-[#C9A227]">{category.description}</p>
                   </div>
                 </div>
               ))}
@@ -535,26 +535,26 @@ function AdminPage() {
         {tab === 'hero' && (
           <div className="grid gap-8 xl:grid-cols-[420px_1fr]">
             <form onSubmit={handleHeroSubmit} className="glass-card space-y-4 p-6">
-              <h2 className="heading-display text-3xl text-[#24151d]">Hero Section</h2>
+              <h2 className="heading-display text-3xl text-[#A8841F]">Hero Section</h2>
               <input
                 type="text"
                 placeholder="Eyebrow text"
                 value={heroForm.eyebrow}
                 onChange={(event) => setHeroForm((current) => ({ ...current, eyebrow: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="text"
                 placeholder="Hero title"
                 value={heroForm.title}
                 onChange={(event) => setHeroForm((current) => ({ ...current, title: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <textarea
                 placeholder="Hero description"
                 value={heroForm.description}
                 onChange={(event) => setHeroForm((current) => ({ ...current, description: event.target.value }))}
-                className="min-h-28 w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="min-h-28 w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
@@ -562,14 +562,14 @@ function AdminPage() {
                   placeholder="Button label"
                   value={heroForm.ctaLabel}
                   onChange={(event) => setHeroForm((current) => ({ ...current, ctaLabel: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
                 <input
                   type="text"
                   placeholder="Button link"
                   value={heroForm.ctaLink}
                   onChange={(event) => setHeroForm((current) => ({ ...current, ctaLink: event.target.value }))}
-                  className="rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                  className="rounded-[18px] border border-[#E0B84A] px-4 py-3"
                 />
               </div>
               <input
@@ -577,23 +577,23 @@ function AdminPage() {
                 placeholder="Hero image URL or upload below"
                 value={heroForm.image}
                 onChange={(event) => setHeroForm((current) => ({ ...current, image: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="text"
                 placeholder="Hero image alt text"
                 value={heroForm.imageAlt}
                 onChange={(event) => setHeroForm((current) => ({ ...current, imageAlt: event.target.value }))}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
               <input
                 type="file"
                 accept="image/*"
                 onChange={handleHeroImageChange}
-                className="w-full rounded-[18px] border border-[#f0dde5] px-4 py-3"
+                className="w-full rounded-[18px] border border-[#E0B84A] px-4 py-3"
               />
-              <div className="rounded-[22px] border border-dashed border-[#e9c9d8] bg-[#fff8fb] p-4">
-                <div className="flex items-center gap-3 text-sm text-[#6f5160]">
+              <div className="rounded-[22px] border border-dashed border-[#E0B84A] bg-white p-4">
+                <div className="flex items-center gap-3 text-sm text-[#C9A227]">
                   <FiUploadCloud className="text-lg text-brand" />
                   <p>Upload a hero image. Uploaded file will be used instead of the URL field.</p>
                 </div>
@@ -601,7 +601,7 @@ function AdminPage() {
                   <p className="mt-3 text-sm font-medium text-brand">Compressing hero image...</p>
                 )}
                 {heroImageFile && (
-                  <div className="mt-4 rounded-[18px] border border-[#f0dde5] bg-white p-3">
+                  <div className="mt-4 rounded-[18px] border border-[#E0B84A] bg-white p-3">
                     <div className="relative overflow-hidden rounded-[14px]">
                       <img src={heroImageFile.preview} alt={heroImageFile.name} className="h-40 w-full object-cover" />
                       <button
@@ -614,8 +614,8 @@ function AdminPage() {
                       </button>
                     </div>
                     <div className="mt-3 text-sm">
-                      <p className="truncate font-medium text-[#24151d]">{heroImageFile.originalName}</p>
-                      <p className="mt-1 text-[#6f5160]">
+                      <p className="truncate font-medium text-[#A8841F]">{heroImageFile.originalName}</p>
+                      <p className="mt-1 text-[#C9A227]">
                         {formatFileSize(heroImageFile.originalSize)} to {formatFileSize(heroImageFile.compressedSize)}
                       </p>
                     </div>
@@ -628,18 +628,18 @@ function AdminPage() {
             </form>
 
             <div className="glass-card overflow-hidden">
-              <div className="grid bg-[#f9ebf1] lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="grid bg-white lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="flex flex-col justify-center p-8 sm:p-12">
                   <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-brand">{heroForm.eyebrow}</p>
-                  <h3 className="heading-display max-w-xl text-4xl leading-none text-[#24151d] sm:text-5xl">
+                  <h3 className="heading-display max-w-xl text-4xl leading-none text-[#A8841F] sm:text-5xl">
                     {heroForm.title}
                   </h3>
-                  <p className="mt-6 max-w-lg text-sm leading-7 text-[#6f5160] sm:text-base">{heroForm.description}</p>
+                  <p className="mt-6 max-w-lg text-sm leading-7 text-[#C9A227] sm:text-base">{heroForm.description}</p>
                   <div className="mt-8">
                     <span className="btn-primary inline-flex gap-2">{heroForm.ctaLabel || 'Button'}</span>
                   </div>
                 </div>
-                <div className="relative min-h-[320px] bg-[linear-gradient(180deg,rgba(194,24,91,0.06),rgba(194,24,91,0.22))]">
+                <div className="relative min-h-[320px] bg-white">
                   <img
                     src={heroImageFile?.preview || heroForm.image}
                     alt={heroForm.imageAlt || heroForm.title}
@@ -656,3 +656,4 @@ function AdminPage() {
 }
 
 export default AdminPage
+

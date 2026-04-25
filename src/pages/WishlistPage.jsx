@@ -13,9 +13,9 @@ function WishlistPage() {
     <>
       <Seo title="Wishlist" />
       <section className="container-shell page-section">
-        <h1 className="heading-display mb-8 text-4xl text-[#24151d]">My Wishlist</h1>
+        <h1 className="heading-display mb-8 text-4xl text-[#A8841F]">My Wishlist</h1>
         {items.length === 0 ? (
-          <div className="glass-card p-8 text-sm text-[#6f5160]">
+          <div className="glass-card p-8 text-sm text-[#C9A227]">
             No saved styles yet. <Link to="/" className="font-semibold text-brand">Browse new arrivals</Link>
           </div>
         ) : (

@@ -26,7 +26,7 @@ function CategoryFeatureCard({ category, index, total }) {
           />
           <div className="absolute inset-x-0 bottom-4 flex justify-center px-3 sm:bottom-5">
             <div className="flex min-h-[52px] w-[112px] items-center justify-center bg-white px-2.5 py-1.5 text-center sm:min-h-[62px] sm:w-[136px] sm:px-3 sm:py-2">
-              <h3 className="max-w-[10ch] text-[13px] font-bold leading-[0.95] tracking-[-0.04em] text-[#24151d] sm:text-[16px]">
+              <h3 className="max-w-[10ch] text-[13px] font-bold leading-[0.95] tracking-[-0.04em] text-[#A8841F] sm:text-[16px]">
                 {category.name}
               </h3>
             </div>
@@ -70,15 +70,15 @@ function HomePage() {
       <Seo title="Home" description="Premium Indian fashion with new arrivals, sarees, lehengas, and festive edits." />
 
       <section className="container-shell page-section">
-        <div className="grid overflow-hidden rounded-[28px] bg-[#f9ebf1] sm:rounded-[36px] lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid overflow-hidden rounded-[28px] bg-white sm:rounded-[36px] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="flex flex-col justify-center p-5 sm:p-12 lg:p-16">
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand sm:mb-4 sm:text-xs sm:tracking-[0.3em]">
               {hero?.eyebrow}
             </p>
-            <h1 className="heading-display max-w-xl text-3xl leading-none text-[#24151d] sm:text-6xl lg:text-7xl">
+            <h1 className="heading-display max-w-xl text-3xl leading-none text-[#A8841F] sm:text-6xl lg:text-7xl">
               {hero?.title}
             </h1>
-            <p className="mt-4 max-w-md text-sm leading-6 text-[#6f5160] sm:mt-6 sm:max-w-lg sm:text-base sm:leading-7">
+            <p className="mt-4 max-w-md text-sm leading-6 text-[#C9A227] sm:mt-6 sm:max-w-lg sm:text-base sm:leading-7">
               {hero?.description}
             </p>
             <div className="mt-6 sm:mt-8">
@@ -87,7 +87,7 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative min-h-[220px] bg-[linear-gradient(180deg,rgba(194,24,91,0.06),rgba(194,24,91,0.22))] sm:min-h-[380px]">
+          <div className="relative min-h-[220px] bg-white sm:min-h-[380px]">
             <img
               src={hero?.image}
               alt={hero?.imageAlt || hero?.title}
@@ -108,10 +108,10 @@ function HomePage() {
 
       <section className="container-shell page-section">
         <div className="mb-8 text-center sm:mb-10">
-          <h2 className="text-[1.30rem] font-semibold tracking-[-0.05em] text-[#24151d] sm:text-[2.45rem]">
+          <h2 className="text-[1.30rem] font-semibold tracking-[-0.05em] text-[#A8841F] sm:text-[2.45rem]">
             New Arrival
           </h2>
-          <p className="heading-display mt-1 text-[1.00rem] leading-[1.15] italic text-[#8d8784] sm:text-[2.1rem]">
+          <p className="heading-display mt-1 text-[1.00rem] leading-[1.15] italic text-[#C9A227] sm:text-[2.1rem]">
             Hot Selling Designer Lehenga with Premium Quality
           </p>
         </div>
@@ -137,11 +137,11 @@ function HomePage() {
       <section className="container-shell page-section">
         <div className="mb-8 text-center sm:mb-10">
           <div className="flex items-center justify-center gap-5">
-            <span className="h-1 w-16 bg-[#24151d]" aria-hidden="true" />
-            <p className="text-l font-bold uppercase tracking-[-0.03em] text-[#24151d] sm:text-3xl">Trending</p>
-            <span className="h-1 w-16 bg-[#24151d]" aria-hidden="true" />
+            <span className="h-1 w-16 bg-brand" aria-hidden="true" />
+            <p className="text-l font-bold uppercase tracking-[-0.03em] text-[#A8841F] sm:text-3xl">Trending</p>
+            <span className="h-1 w-16 bg-brand" aria-hidden="true" />
           </div>
-          <p className="heading-display mt-2 text-base italic text-[#8d8784] sm:text-l">Top view in this week</p>
+          <p className="heading-display mt-2 text-base italic text-[#C9A227] sm:text-l">Top view in this week</p>
         </div>
         {loading ? (
           <LoadingSkeleton cards={4} />

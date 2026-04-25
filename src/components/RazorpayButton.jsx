@@ -32,7 +32,7 @@ function RazorpayButton({ amount, customer, onSuccess, className, children }) {
       currency: 'INR',
       name: 'ELANTRAA',
       description: 'Premium Indian Fashion',
-      image: 'https://placehold.co/200x200/C2185B/ffffff?text=E',
+      image: 'https://placehold.co/200x200/C9A227/ffffff?text=E',
       handler(response) {
         onSuccess?.(response)
       },
@@ -41,7 +41,7 @@ function RazorpayButton({ amount, customer, onSuccess, className, children }) {
         email: customer?.email || '',
         contact: customer?.phone || '',
       },
-      theme: { color: '#C2185B' },
+      theme: { color: '#C9A227' },
     })
 
     razorpay.open()

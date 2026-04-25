@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import AdminPage from './admin/AdminPage'
 import AdminRoute from './components/AdminRoute'
 import PrivateRoute from './components/PrivateRoute'
+import ScrollToTop from './components/ScrollToTop'
 import AuthPage from './pages/AuthPage'
 import CartPage from './pages/CartPage'
 import CategoryPage from './pages/CategoryPage'
@@ -18,6 +19,7 @@ import WishlistPage from './pages/WishlistPage'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -66,9 +68,9 @@ function App() {
         toastOptions={{
           style: {
             borderRadius: '18px',
-            background: '#fffaf7',
-            color: '#2d1420',
-            border: '1px solid rgba(194, 24, 91, 0.14)',
+            background: '#ffffff',
+            color: '#A8841F',
+            border: '1px solid rgba(201, 162, 39, 0.24)',
           },
         }}
       />

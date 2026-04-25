@@ -54,34 +54,34 @@ function CategoryPage() {
       <Seo title={category?.name || 'Category'} description={category?.description} />
 
       <section className="container-shell page-section">
-        <div className="overflow-hidden rounded-[6px] bg-[#7e7b7b] px-6 py-16 text-center text-white sm:px-10 sm:py-24">
+        <div className="overflow-hidden rounded-[6px] bg-[linear-gradient(135deg,#E0B84A_0%,#A8841F_100%)] px-6 py-16 text-center text-white sm:px-10 sm:py-24">
           <p className="text-[22px] font-normal uppercase tracking-[0.05em] sm:text-[34px]">{heroTitle}</p>
           <p className="mx-auto mt-6 max-w-3xl text-[14px] leading-[1.15] text-white sm:text-[24px] sm:leading-[1.2]">
             {category?.description || 'Discover our latest collection with timeless silhouettes and occasion-ready styling.'}
           </p>
         </div>
 
-        <div className="mt-8 flex items-center justify-between border-y border-[#ece5df] px-1 py-4 text-[#7d7772]">
+        <div className="mt-8 flex items-center justify-between border-y border-[#E0B84A] px-1 py-4 text-[#C9A227]">
           <button type="button" className="inline-flex items-center gap-2 text-[14px] sm:text-base">
             <FiFilter className="text-[18px]" />
             <span>Filter</span>
           </button>
-          <div className="hidden items-center gap-3 text-[#8a8480] sm:flex">
-            <span className="h-10 w-10 border border-[#bcb4ae] bg-[linear-gradient(180deg,#fff_0%,#fff_25%,#9f9f9f_25%,#9f9f9f_45%,#fff_45%,#fff_55%,#9f9f9f_55%,#9f9f9f_75%,#fff_75%,#fff_100%)]" />
-            <span className="h-10 w-10 border border-[#bcb4ae] bg-[linear-gradient(90deg,#9f9f9f_0%,#9f9f9f_100%)] opacity-55" />
-            <span className="h-10 w-10 border-2 border-[#2f2a26] bg-[linear-gradient(90deg,#2f2a26_0%,#2f2a26_42%,transparent_42%,transparent_58%,#2f2a26_58%,#2f2a26_100%)]" />
+          <div className="hidden items-center gap-3 text-[#C9A227] sm:flex">
+            <span className="h-10 w-10 border border-[#E0B84A] bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_25%,#E0B84A_25%,#E0B84A_45%,#ffffff_45%,#ffffff_55%,#E0B84A_55%,#E0B84A_75%,#ffffff_75%,#ffffff_100%)]" />
+            <span className="h-10 w-10 border border-[#E0B84A] bg-[linear-gradient(90deg,#E0B84A_0%,#c9a227_100%)] opacity-75" />
+            <span className="h-10 w-10 border-2 border-[#A8841F] bg-[linear-gradient(90deg,#A8841F_0%,#A8841F_42%,transparent_42%,transparent_58%,#A8841F_58%,#A8841F_100%)]" />
           </div>
           <div className="relative">
             <select
               value={sort}
               onChange={(event) => setSort(event.target.value)}
-              className="appearance-none bg-transparent pr-7 text-right text-[14px] text-[#7d7772] outline-none sm:text-base"
+              className="appearance-none bg-transparent pr-7 text-right text-[14px] text-[#C9A227] outline-none sm:text-base"
             >
               <option value="newest">Sort</option>
               <option value="price-low">Price low-high</option>
               <option value="price-high">Price high-low</option>
             </select>
-            <FiChevronDown className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[#7d7772]" />
+            <FiChevronDown className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[#C9A227]" />
           </div>
         </div>
 
@@ -98,8 +98,8 @@ function CategoryPage() {
               <LoadingSkeleton cards={8} />
             ) : filtered.length === 0 ? (
               <div className="glass-card p-10 text-center">
-                <p className="heading-display text-4xl text-[#24151d]">No products found</p>
-                <p className="mt-3 text-sm text-[#6f5160]">
+                <p className="heading-display text-4xl text-[#A8841F]">No products found</p>
+                <p className="mt-3 text-sm text-[#C9A227]">
                   This category does not have any matching products yet.
                 </p>
               </div>

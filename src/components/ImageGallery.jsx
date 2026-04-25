@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 function ImageGallery({ images = [] }) {
   const [active, setActive] = useState(0)
-  const safeImages = images.length ? images : ['https://placehold.co/800x1000/f8e8ef/24151d?text=ELANTRAA']
+  const safeImages = images.length ? images : ['https://placehold.co/800x1000/fff8e7/6f5312?text=ELANTRAA']
 
   return (
     <div className="grid gap-4 lg:grid-cols-[96px_1fr]">
@@ -11,14 +11,14 @@ function ImageGallery({ images = [] }) {
           <button
             key={`${image}-${index}`}
             type="button"
-            className={`overflow-hidden rounded-[20px] border ${active === index ? 'border-brand' : 'border-[#f0dde5]'}`}
+            className={`overflow-hidden rounded-[20px] border ${active === index ? 'border-brand' : 'border-[#E0B84A]'}`}
             onClick={() => setActive(index)}
           >
             <img src={image} alt="" className="h-20 w-20 object-cover" />
           </button>
         ))}
       </div>
-      <div className="order-1 overflow-hidden rounded-[32px] border border-[#f0dde5] bg-white lg:order-2">
+      <div className="order-1 overflow-hidden rounded-[32px] border border-[#E0B84A] bg-white lg:order-2">
         <img src={safeImages[active]} alt="Product" className="h-[520px] w-full object-cover sm:h-[640px]" />
       </div>
     </div>
