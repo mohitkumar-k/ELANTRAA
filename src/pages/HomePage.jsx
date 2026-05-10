@@ -60,38 +60,51 @@ function HomePage() {
   const trending = products.slice(0, 4)
   const arrivalSlides = chunkProducts(products.slice(0, 8), 2)
   const hero = homeContent?.hero
+  const primaryCtaLabel = hero?.ctaLabel?.trim() || 'Shop Now'
 
   return (
     <>
       <Seo title="Home" description="Premium Indian fashion with new arrivals, sarees, lehengas, and festive edits." />
 
-      <section className="border-b border-[#DED4C5] bg-white">
-        <div className="container-shell grid gap-6 py-7 sm:gap-8 sm:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-16">
-          <div className="relative flex flex-col justify-center">
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.34em] text-[#8E7E67]">
+      <section className="relative overflow-hidden border-b border-[#DED4C5] bg-[#110D0A]">
+        <div className="absolute inset-0">
+          <img
+            src={hero?.image}
+            alt={hero?.imageAlt || hero?.title}
+            decoding="async"
+            className="h-full w-full object-cover object-[62%_center]"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(13,9,5,0.88)_0%,rgba(13,9,5,0.66)_42%,rgba(13,9,5,0.18)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(180deg,transparent,rgba(17,13,10,0.74))]" />
+        </div>
+
+        <div className="container-shell relative flex min-h-[560px] items-end py-8 sm:min-h-[660px] sm:py-12 lg:min-h-[calc(100vh-84px)] lg:items-center">
+          <div className="max-w-2xl pb-6 text-white sm:pb-8 lg:pb-0">
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.34em] text-[#E0C78C] sm:mb-5">
               {hero?.eyebrow}
             </p>
-            <h1 className="max-w-xl text-[2.15rem] font-semibold uppercase leading-[0.96] tracking-[-0.05em] text-[#1F170E] min-[390px]:text-[2.4rem] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-2xl text-[2.55rem] font-semibold uppercase leading-[0.94] text-white min-[390px]:text-[3rem] sm:text-7xl lg:text-8xl">
               {hero?.title}
             </h1>
-            <p className="mt-4 max-w-md text-sm leading-7 text-[#6E5F4C] sm:mt-6 sm:max-w-lg sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-[#F3E9D8] sm:mt-6 sm:text-base sm:leading-8">
               {hero?.description}
             </p>
-            <div className="mt-6 sm:mt-8">
-              <Link to={hero?.ctaLink || '/'} className="btn-primary gap-2 px-5 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm">
-                {hero?.ctaLabel} <FiArrowRight />
+            <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
+              <Link
+                to={hero?.ctaLink || '/'}
+                className="inline-flex min-w-[170px] items-center justify-center gap-2 border border-white bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#1F170E] transition duration-300 hover:bg-[#E0C78C] sm:px-7 sm:text-sm"
+                style={{ color: '#1F170E' }}
+              >
+                <span>{primaryCtaLabel}</span>
+                <FiArrowRight aria-hidden="true" style={{ color: '#1F170E' }} />
+              </Link>
+              <Link
+                to="/category/saree"
+                className="inline-flex items-center justify-center border border-[#E0C78C] bg-[#E0C78C] px-5 py-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#1F170E] shadow-[0_14px_34px_rgba(0,0,0,0.22)] transition duration-300 hover:border-white hover:bg-white sm:px-7 sm:text-sm"
+              >
+                Explore Sarees
               </Link>
             </div>
-          </div>
-          <div className="relative min-h-[255px] overflow-hidden rounded-[14px] bg-transparent min-[390px]:min-h-[300px] sm:min-h-[480px] sm:rounded-[16px] lg:min-h-[560px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.22),transparent_34%)]" />
-            <img
-              src={hero?.image}
-              alt={hero?.imageAlt || hero?.title}
-              decoding="async"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(123,91,23,0.04)_0%,rgba(123,91,23,0.03)_32%,rgba(123,91,23,0.12)_100%)]" />
           </div>
         </div>
       </section>
